@@ -37,7 +37,7 @@ public class PrincipalEstoquePallet implements AcaoRotinaJava{
 	        SimpleDateFormat dataFormatado = new SimpleDateFormat("dd/MM/yyyy");
 	        tabelaHtml.append("<table>")
             .append("<tr>")
-            .append("<th>Data Etiqueta</th>")
+            .append("<th>Data pallet</th>")
             .append("<th>N.Pallet</th>")
             .append("<th>Pallet</th>")
             .append("<th>Cliente</th>")
@@ -55,7 +55,7 @@ public class PrincipalEstoquePallet implements AcaoRotinaJava{
 				BigDecimal nUnicoPedido = (BigDecimal) registro.getCampo("NROUNICOPED");
 				String palett = (String) registro.getCampo("NROPALLET");
 				String produtor = (String) registro.getCampo("PRODUTOR");
-				BigDecimal estoque = (BigDecimal) registro.getCampo("ESTOQUE");
+				BigDecimal estoque = (BigDecimal) registro.getCampo("QTDEPLT");
 				String calibre = (String) registro.getCampo("CALIBRE");
 				String variedade = (String) registro.getCampo("VARIEDADE");
 				String codproduto = (String) registro.getCampo("COD_PRODUTO");
@@ -82,7 +82,7 @@ public class PrincipalEstoquePallet implements AcaoRotinaJava{
 			 tabelaHtml.append("</table>");
 			 Timestamp dtConsilidacao = (Timestamp) ctx.getParam("DTCONSILIDACAO");
 			 Timestamp dtCarregamento = (Timestamp) ctx.getParam("DTCARREGAMENTO");
-			 Timestamp dtEtiquetagem = (Timestamp) ctx.getParam("DTCARREGAMENTO");
+			 Timestamp dtEtiquetagem = (Timestamp) ctx.getParam("DTETIQUETAGEM");
 			 ServiceEmail.CorpoEmailMarcacaoPallet(ctx, tabelaHtml.toString(),dtConsilidacao,dtCarregamento,dtEtiquetagem);
 			
 	} catch (Exception e) {

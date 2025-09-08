@@ -17,7 +17,7 @@ public class ServiceEmailTeste {
 			hnd = JapeSession.open();
 			JapeWrapper ordemServicoDAO = JapeFactory.dao(DynamicEntityNames.FILA_MSG);
 			ordemServicoDAO.create()
-			.set("EMAIL", "relatorio.etiquetagem@argofruta.com")// envia para esse email
+			.set("EMAIL", "relatorio.etiquetagem@argofruta.com")// envia para esse email relatorio.etiquetagem@argofruta.com
 			.set("CODCON", BigDecimal.ZERO)
 			.set("STATUS", "Pendente")
 			.set("TIPOENVIO", "E")
